@@ -40,3 +40,6 @@ opt.signcolumn = "yes" -- show sign column so that text doesn't shift
 
 -- turn off swapfile
 -- opt.swapfile = false
+
+-- opt.let g:python3_host_prog = '/path/to/py3nvim/bin/python'
+vim.g.python3_host_prog = '/Users/michaelthumand/.pyenv/shims/python'

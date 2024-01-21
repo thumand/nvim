@@ -35,4 +35,34 @@ The file structure should be:
     * Add the path to python (get it using `which python`) to `~/config/nvim/lua/core/options.lua`. The path sould be: `vim.g.python3_host_prog = '/Users/michaelthumand/.pyenv/shims/python'`
     * Do a `pip install neovim`
 
+## Tmux and Neovim
 
+### Install Tmux and a plugin manager
+
+**Step 1**: Tmux can be installed on MacOS with for example Homebrew:
+
+```
+brew install tmux
+```
+
+**Step 2**: In the home folder add the `.tmux.conf` from this repository to `~/.tmux.conf`.
+
+**Step 3**: And a plugin manager can be installed on MacOS like this:
+
+```
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
+When a plugin is specified in `.tmux.conf` it can be installed from a Tmux-session with `<C-b>I`.
+
+To move easily between `tmux` and `nvim` make sure to use this plugin: `christoomey/vim-tmux-navigator`.
+
+### Some Tmux shortcuts
+
+* `tmux new -s [name]`  (if not number, then session name will be a number)
+* `tmux ls`
+* `tmux detach` (in normal command line)
+* `tmux attach -t [name]`
+* `<C-b>s` to list sessions from tmux
+* `<C-b>,` to rename
+* `<C-b>I` to install plugins

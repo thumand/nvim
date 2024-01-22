@@ -10,7 +10,17 @@ Selected keybindings:
 `<leader>fr` find old files
 `<leader>fg` live grep
 `<leader>fs` grep string under cursor in cwd
-`<leader`
+`<leader>K` Hover information about the symbol under cursor
+`<leader>gd` jump to definitions
+`<leader>gD` jump to declaration
+`<leader>gi` list implementations
+`<leader>go` jums to the definition of the type of symbol under cursor
+`<leader>gr` list references to the symbol
+`<leader>gs` signature information
+`<leader>gl` show diagnostics
+`<leader>[d` Move to previous diagnostics
+`<leader>]d` Move to next diagnostics
+
 
 --]]
 vim.g.mapleader = ' '
@@ -21,6 +31,8 @@ vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 vim.wo.nu = true
 vim.wo.relativenumber = true
+vim.cmd("set signcolumn=yes")
+vim.opt.termguicolors = true
 vim.opt.clipboard:append("unnamedplus")
 vim.keymap.set("i", "jj", "<ESC>", { desc = "Exit insert mode with jk" })
 
@@ -98,7 +110,6 @@ require('lazy').setup({
   },
 })
 
-vim.opt.termguicolors = true
 vim.cmd.colorscheme('catppuccin')
 
 local lsp_zero = require('lsp-zero')
@@ -107,6 +118,9 @@ lsp_zero.on_attach(function(client, bufnr)
   -- see :help lsp-zero-keybindings
   -- to learn the available actions
   lsp_zero.default_keymaps({ buffer = bufnr })
+
+  -- Disable inline diagnostics
+  vim.diagnostic.config({ virtual_text = false })
 end)
 
 -- Using lsp-servers to format files on save

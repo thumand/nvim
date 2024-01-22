@@ -14,6 +14,8 @@ return {
     treesitter.setup({ -- enable syntax highlighting
       highlight = {
         enable = true,
+        -- Don't make treesitter highlight certain files
+        disable = { "text", "vimdoc" }, -- list of language that will be disabled
       },
       -- enable indentation
       indent = { enable = true },
@@ -41,6 +43,7 @@ return {
         "dockerfile",
         "gitignore",
         "query",
+        "python",
       },
       incremental_selection = {
         enable = true,

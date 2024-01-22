@@ -66,3 +66,23 @@ To move easily between `tmux` and `nvim` make sure to use this plugin: `christoo
 * `<C-b>s` to list sessions from tmux
 * `<C-b>,` to rename
 * `<C-b>I` to install plugins
+
+
+`gcc` for commenting
+`C-n` for opening neo-tree
+`<leader>ff` find files
+`<leader>fr` find old files
+`<leader>fg` live grep
+`<leader>fs` grep string under cursor in cwd
+`<leader>K` Hover information about the symbol under cursor
+`<leader>gd` jump to definitions
+`<leader>gD` jump to declaration
+`<leader>gi` list implementations
+`<leader>go` jums to the definition of the type of symbol under cursor
+`<leader>gr` list references to the symbol
+`<leader>gs` signature information
+`<leader>gl` show diagnostics
+`<leader>[d` Move to previous diagnostics
+`<leader>]d` Move to next diagnostics
+
+
